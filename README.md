@@ -1,44 +1,84 @@
 # Environmental Data Analysis (EDA) Project
 
-This repository contains scripts and data processing pipelines for an Environmental Data Analysis project. The project focuses on collecting and analyzing data regarding air quality (PM2.5, NO2), weather, and wildfires (NASA FIRMS) to study their correlations and environmental impact.
+This repository contains data collection scripts, datasets, and Jupyter notebooks for an Environmental Data Analysis project. The project explores the relationship between air quality (PM2.5 and NO2), weather conditions, and wildfire activity (NASA FIRMS) to understand their impact on the environment.
 
 ## Project Structure
 
-- `apis/` - (Ignored in git) Contains raw API keys for the data sources.
+- `apis/` – Contains API keys for the different data sources (ignored by Git).
 - `data/`
-  - `raw/` - Raw data downloads (Air Quality, Fires, Weather).
-  - `processed/` - Cleaned and processed datasets.
-- `scripts/` - Python scripts for data collection:
-  - `download_pm25.py` - Fetches PM2.5 air quality data.
-  - `download_no2.py` - Fetches NO2 air quality data.
-  - `download_weather.py` - Fetches meteorological data.
-  - `download_firms.py` - Fetches wildfire data using NASA's FIRMS API.
+  - `raw/` – Raw datasets for air quality, fires, and weather.
+  - `processed/` – Cleaned and processed datasets used for analysis.
+- `scripts/` – Python scripts used for collecting data:
+  - `download_pm25.py` – Fetches PM2.5 air quality data.
+  - `download_no2.py` – Fetches NO2 air quality data.
+  - `download_weather.py` – Collects meteorological data.
+  - `download_firms.py` – Fetches wildfire data using NASA's FIRMS API.
+- `notebooks/` – Jupyter notebooks containing exploratory data analysis, visualisations, statistical analysis, and predictive modelling.
+
+## Analysis Contributions
+
+The project includes multiple individual and combined analyses:
+
+- **Air Quality Analysis:** Exploration of PM2.5 and NO2 trends, distributions, and patterns.
+- **Wildfire Analysis:** Investigation of wildfire activity and its relationship with air pollution.
+- **Weather and Pollution Analysis:** Study of how weather conditions influence PM2.5 concentrations in Delhi, including correlation analysis, lag analysis, Granger causality, and regression modelling.
+- **Combined Analysis:** Integration of pollution and wildfire datasets to investigate their overall environmental impact.
 
 ## Setup Instructions
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/khushishahs02/EDA-Group-Project.git
-   cd EDA-Group-Project
-   ```
+### 1. Clone the Repository
 
-2. **Environment Setup:**
-   Ensure you have Python installed and create a virtual environment:
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-   ```
+```bash
+git clone https://github.com/khushishahs02/EDA-Group-Project.git
+cd EDA-Group-Project
+```
 
-3. **Install Dependencies:**
-   (Dependencies will be listed in a `requirements.txt` when finalized. Ensure `requests`, `pandas`, etc., are installed to run the scripts.)
+### 2. Environment Setup
 
-4. **API Keys:**
-   Create an `apis/` directory in the root if it doesn't exist. Place your API keys in the respective `.txt` files as expected by the scripts (`nasa_firms_api.txt`, `opentransit_api.txt`, `aq_api.txt`).
+Ensure Python is installed and create a virtual environment:
+
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
+
+### 3. Install Dependencies
+
+Install the required Python libraries:
+
+```bash
+pip install numpy pandas matplotlib seaborn scipy statsmodels scikit-learn requests
+```
+
+### 4. API Keys
+
+Create an `apis/` directory in the project root if it does not exist. Add the required API keys in their respective `.txt` files as expected by the scripts:
+
+- `nasa_firms_api.txt`
+- `opentransit_api.txt`
+- `aq_api.txt`
+
+Keep API keys private and do not commit them to GitHub.
 
 ## Usage
 
-To start data collection, run the scripts located in the `scripts/` directory:
+### Data Collection
+
+To start collecting data, run the scripts from the project root:
+
 ```bash
 python scripts/download_weather.py
 python scripts/download_pm25.py
+python scripts/download_no2.py
+python scripts/download_firms.py
 ```
+
+### Running the Analysis
+
+Open the `notebooks/` directory and launch the required Jupyter notebook:
+
+```bash
+jupyter notebook
+```
+
+Select the notebook you want to explore and run its cells to view the analysis and visualisations.
