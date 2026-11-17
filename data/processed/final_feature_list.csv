@@ -1,0 +1,7 @@
+feature,mean rank,reason
+pm25_lag1,2.7,"pollution history feature, top 8 in mutual information, RFE, random forest"
+fire_count,4.7,"fire feature, top 8 in RFE, random forest"
+fire_count_lag1,5.0,"fire feature, top 8 in mutual information, RFE, random forest"
+pm25_roll7,5.3,"pollution history feature, top 8 in mutual information, RFE, random forest"
+doy_sin,9.0,"calendar feature, top 8 in mutual information"
+no2,11.7,"traffic signal feature, top 8 in random forest"
